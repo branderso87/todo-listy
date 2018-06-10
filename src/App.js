@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
 class App extends Component {
-  render() {
+  constructor () {
+    super ()
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleSubmit (e, values){
+    e.preventDefault()
+    console.log('values')
+  }
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>TODO</label>
+          <input name='todo' type='text' placeholder='Create New Todo' />
+          <button type='submit'>Create</button>
+        </form>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
+
+//ToDo List:
+//1. Create a Todo
+//2. List All Todos
+//3. Complete Todos
+//4. Delete Todos
