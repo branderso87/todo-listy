@@ -1,26 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
+import TodoForm from './TodoForm/TodoForm'
 
-class App extends Component {
-  constructor () {
-    super ()
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-  handleSubmit (e, values){
-    e.preventDefault()
-    console.log('values')
-  }
-  render () {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>TODO</label>
-          <input name='todo' type='text' placeholder='Create New Todo' />
-          <button type='submit'>Create</button>
-        </form>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div>
+      <TodoForm />
+    </div>
+  )
 }
 
 export default App
